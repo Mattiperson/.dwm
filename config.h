@@ -61,7 +61,8 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
+// static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[] = { "alacritty", NULL };
 
 #include"shiftview.c"
 static Key keys[] = {
@@ -87,6 +88,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_period, cyclelayout,    {.i = +1 } },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
@@ -109,11 +111,11 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
-	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("betterlockscreen --lock blur")},
+	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("betterlockscreen --lock dimblur") },
 
 /* Apps */
-	{ MODKEY, XK_r, spawn, SHCMD("redshift -O 2400") },
-        { MODKEY|ShiftMask, XK_r, spawn, SHCMD("redshift -x") },
+	{ MODKEY,                       XK_r,      spawn,          SHCMD("redshift -O 2400") },
+        { MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("redshift -x") },
 /* Hardware */
 	{ MODKEY,                       XK_Up,     spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%")},	
 	{ MODKEY,                       XK_Down,   spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%")},
