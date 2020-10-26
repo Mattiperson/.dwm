@@ -1,8 +1,8 @@
-# .dwm
-My very intensly patched DWM config.
+# About
+My very intensly patched DWM config, the culmination of months of learning about Linux. I'm pretty proud of what I've acomplished so far.
 
 ## Table of contents
-* [Dependancies] (#Dependancies)
+* [Dependancies](#Dependancies)
 * [Insallation](#Installation)
 * [Optional](#Optional)
 * [Patches](#Patches)
