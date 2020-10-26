@@ -12,6 +12,6 @@ Rotate stack
 
 Screenshots:
 
-https://i.imgur.com/ZTrx3yT.png
+(https://i.imgur.com/ZTrx3yT.png)
 
-https://i.imgur.com/2sEzZgh.png
+(https://i.imgur.com/2sEzZgh.png)
