@@ -14,4 +14,4 @@ Screenshots:
 
 ![Nord theme](https://i.imgur.com/ZTrx3yT.png)
 
-(https://i.imgur.com/2sEzZgh.png)
+![With windows](https://i.imgur.com/2sEzZgh.png)
