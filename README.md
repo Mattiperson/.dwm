@@ -4,10 +4,9 @@ My very intensly patched DWM config.
 ## Table of contents
 * [Dependancies] (#Dependancies)
 * [Insallation](#Installation)
+* [Optional](#Optional)
+* [Patches](#Patches)
 * [Screenshots](#Screenshots)
-* [Optional] (#Optional)
-* [Patches] (#Patches)
-* [Screenshots] (#Screenshots)
 
 ## Dependancies
 The config requires the following:
