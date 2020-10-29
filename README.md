@@ -43,6 +43,7 @@ You can use my config without these things but they'll make it much better.
 * dmenu config
 ```sh
 cd .config
+```
 ```sh
 git clone https://github.com/Mattiperson/slstatus
 git clone https://github.com/Mattiperson/st
