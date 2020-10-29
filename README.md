@@ -69,6 +69,7 @@ git clone https://github.com/Mattiperson/.dwm
 2. Cd in and make install
 ```sh
 cd .dwm
+chmod +x autostart.sh
 ```
 ```sh
 sudo make clean install
