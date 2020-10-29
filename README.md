@@ -7,7 +7,6 @@
   * [Dependencies](#dependencies)
   * [Nice things](#nice-things)
   * [Installation](#installation)
-* [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
 
@@ -39,8 +38,12 @@ Just do they stuff and you should be good.
 
 ### Dependencies
 * TerminessTTF Nerd Font
+* Redshift
+* Flameshot
 ```sh
 yay -S nerd-fonts-terminess
+sudo pacman -S redshift
+sudo pacman -S flameshot
 ```
 
 
