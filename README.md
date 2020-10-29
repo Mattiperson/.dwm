@@ -4,9 +4,9 @@
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
 * [Getting Started](#getting-started)
+  * [Dependencies](#dependencies)
   * [Nice things](#nice-things)
   * [Installation](#installation)
-* [Usage](#usage)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
@@ -34,6 +34,16 @@ A very intensly patched DWM config made mostly at 1 am.
 ## Getting Started
 
 Just do they stuff and you should be good.
+
+
+
+### Dependencies
+* TerminessTTF Nerd Font
+```sh
+yay -S nerd-fonts-terminess
+```
+
+
 
 ### Nice things
 
