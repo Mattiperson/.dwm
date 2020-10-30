@@ -26,6 +26,7 @@ A very intensly patched DWM config made mostly at 1 am.
 * Grid mode
 * Restartsig
 * Rotate stack
+* Underline tag indicator
 
 
 
