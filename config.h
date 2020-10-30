@@ -9,7 +9,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "TerminessTTF Nerd Font:size=14" };
 static const char dmenufont[]       = "TerminessTTF Nerd Font:size=14";
 static const char col_gray1[]       = "#2E3440"; /* Bar background */
-static const char col_gray2[]       = "#3B4252"; /* Inactive window's border */
+static const char col_gray2[]       = "#3b4252"; /* Inactive window's border */
 static const char col_gray3[]       = "#D8DEE9"; /* Font */
 static const char col_gray4[]       = "#D8DEE9"; /* Current tag and current window */
 static const char col_cyan[]        = "#5E81AC"; /* Bar highlight */
@@ -20,7 +20,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { " ", " ", " "," " };
+static const char *tags[] = { " ", " ", " ", "ﭮ ", " ", " " };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -28,7 +28,6 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Discord",  NULL,	  NULL,	      0,	    1,           -1 },
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
@@ -62,8 +61,8 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
-// static const char *termcmd[] = {"alacritty", NULL };
+// static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[] = {"alacritty", NULL };
 
 #include"shiftview.c"
 static Key keys[] = {
@@ -113,11 +112,11 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
 	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("betterlockscreen --lock dimblur")},
-	{ MODKEY,	                XK_s,      spawn,          SHCMD("flameshot full -p ~/images/screenshots") },
+	{ MODKEY,            		XK_s,      spawn,          SHCMD("flameshot full -p ~/images/screenshots") },
 
 /* Apps */
-	{ MODKEY,			XK_r,	   spawn, 	   SHCMD("redshift -O 2400") },
-        { MODKEY|ShiftMask, 		XK_r,	   spawn,	   SHCMD("redshift -x") },
+	{ MODKEY, XK_r, spawn, SHCMD("redshift -O 2400") },
+        { MODKEY|ShiftMask, XK_r, spawn, SHCMD("redshift -x") },
 /* Hardware */
 	{ MODKEY,                       XK_Up,     spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%")},	
 	{ MODKEY,                       XK_Down,   spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%")},

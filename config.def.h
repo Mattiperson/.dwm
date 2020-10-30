@@ -1,13 +1,13 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int gappx     = 20;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "TerminessTTF Nerd Font Bold:size=14" };
-static const char dmenufont[]       = "TerminessTTF Nerd Font Bold:size=14";
+static const char *fonts[]          = { "TerminessTTF Nerd Font:size=14" };
+static const char dmenufont[]       = "TerminessTTF Nerd Font:size=14";
 static const char col_gray1[]       = "#2E3440"; /* Bar background */
 static const char col_gray2[]       = "#3b4252"; /* Inactive window's border */
 static const char col_gray3[]       = "#D8DEE9"; /* Font */
@@ -20,7 +20,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { " ", " ", " "," " };
+static const char *tags[] = { " ", " ", " ", "ﭮ ", " ", " " };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -112,7 +112,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
 	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("betterlockscreen --lock dimblur")},
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("scrot") },
+	{ MODKEY,            		XK_s,      spawn,          SHCMD("flameshot full -p ~/images/screenshots") },
 
 /* Apps */
 	{ MODKEY, XK_r, spawn, SHCMD("redshift -O 2400") },
