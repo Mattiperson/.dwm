@@ -33,7 +33,7 @@ A very intensly patched DWM config made mostly at 1 am.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Just do they stuff and you should be good.
+Just do the stuff and you should be good.
 
 
 
