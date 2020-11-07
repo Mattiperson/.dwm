@@ -6,13 +6,16 @@ static const unsigned int gappx     = 20;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const int user_bh            = 30;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
+static const int vertpad            = 20;       /* vertical padding of bar */
+static const int sidepad            = 20;       /* horizontal padding of bar */
 static const char *fonts[]          = { "TerminessTTF Nerd Font:size=14" };
 static const char dmenufont[]       = "TerminessTTF Nerd Font:size=14";
-static const char col_gray1[]       = "#1e1e2a"; /* Bar background */
-static const char col_gray2[]       = "#3e3d4f"; /* Inactive window's border */
-static const char col_gray3[]       = "#b2bddb"; /* Font */
-static const char col_gray4[]       = "#b2bddb"; /* Current tag and current window */
-static const char col_cyan[]        = "#EB666A"; /* Bar highlight */
+static const char col_gray1[]       = "#192222"; /* Bar background */
+static const char col_gray2[]       = "#262827"; /* Inactive window's border */
+static const char col_gray3[]       = "#FDF9EF"; /* Font */
+static const char col_gray4[]       = "#FDF9EF"; /* Current tag and current window */
+static const char col_cyan[]        = "#454141"; /* Bar highlight */
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -20,7 +23,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { " ", " ", " ", "ﭮ ", " ", " " };
+static const char *tags[] = { " ", " ", " ", "ﭮ ", " ", " ", " " };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -33,9 +36,9 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.5; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
 #include "grid.c"
 static const Layout layouts[] = {
@@ -111,7 +114,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
-	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("betterlockscreen --lock dimblur")},
+	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("betterlockscreen --lock blur")},
 	{ MODKEY,            		XK_s,      spawn,          SHCMD("flameshot full -p ~/images/screenshots") },
 
 /* Apps */
