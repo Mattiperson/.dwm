@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int gappx     = 20;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -9,7 +9,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh            = 30;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
 static const int vertpad            = 20;       /* vertical padding of bar */
 static const int sidepad            = 20;       /* horizontal padding of bar */
-static const char *fonts[]          = { "TerminessTTF Nerd Font:size=14" };
+static const char *fonts[]          = { "Siji:size=16", "TerminessTTF Nerd Font:size=13" };
 static const char dmenufont[]       = "TerminessTTF Nerd Font:size=14";
 static const char col_gray1[]       = "#192222"; /* Bar background */
 static const char col_gray2[]       = "#262827"; /* Inactive window's border */
@@ -23,7 +23,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { " ", " ", " ", "ﭮ ", " ", " ", " " };
+static const char *tags[] = { " ", " ", " ", " ", " ", " ", " ", " ", " " };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -51,7 +51,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod4Mask
+#define MODKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -74,32 +74,32 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_t,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
-        { MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
+    { MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } }, { MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_z,      zoom,           {0} },
+	{ MODKEY,                       XK_v,      zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,			XK_m,	   cyclelayout,    {.i = -1 } },
-	{ MODKEY,			XK_comma,  cyclelayout,    {.i = +1 } },
+	{ MODKEY,			            XK_m,	   cyclelayout,    {.i = -1 } },
+	{ MODKEY,			            XK_comma,  cyclelayout,    {.i = +1 } },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY|ControlMask,		XK_m,  	   focusmon,       {.i = -1 } },
-	{ MODKEY|ControlMask,		XK_comma,  focusmon,       {.i = +1 } },
+	{ MODKEY|ControlMask,		    XK_m,  	   focusmon,       {.i = -1 } },
+	{ MODKEY|ControlMask,		    XK_comma,  focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } }, /* Gaaaaps */
-        { MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
-        { MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
+    { MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
+    { MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
 	{ MODKEY,                       XK_period, shiftview,      { .i = +1 } },
 	{ MODKEY,                       XK_n,      shiftview,      { .i = -1 } },
 	TAGKEYS(                        XK_1,                      0)
@@ -113,13 +113,11 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
-	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("betterlockscreen --lock blur")},
+	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("betterlockscreen -l") },
 	{ MODKEY,            		XK_s,      spawn,          SHCMD("flameshot full -p ~/images/screenshots") },
 
 /* Apps */
 	{ MODKEY, 			XK_w, 	   spawn, 	   SHCMD("firefox")},
-	{ MODKEY, 			XK_r, 	   spawn, 	   SHCMD("redshift -O 2400") },
-        { MODKEY|ShiftMask, XK_r, spawn, SHCMD("redshift -x") },
 /* Hardware */
 	{ MODKEY,                       XK_Up,     spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%")},	
 	{ MODKEY,                       XK_Down,   spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%")},
