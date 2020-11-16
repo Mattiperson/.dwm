@@ -113,7 +113,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
-	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("betterlockscreen -l") },
+	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("betterlockscreen -l blur") },
 	{ MODKEY,            		XK_s,      spawn,          SHCMD("flameshot full -p ~/images/screenshots") },
 
 /* Apps */
