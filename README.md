@@ -27,6 +27,7 @@ A very intensly patched DWM config made mostly at 1 am.
 * Restartsig
 * Rotate stack
 * Underline tag indicator
+* I lost track of all the patches, basta there's a lot.
 
 
 
